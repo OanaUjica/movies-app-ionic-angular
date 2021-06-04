@@ -1,0 +1,7 @@
+{
+  "name": "ionic-movies-angular",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ionic-movies-angular",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
