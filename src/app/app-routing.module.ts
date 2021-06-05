@@ -1,22 +1,43 @@
+import { ReservationPage } from './pages/reservations/reservation.page';
+import { AddMoviePage } from './pages/add.movie.page.ts/add.movie.page';
+import { EditMoviePage } from './pages/edit.movie.page.ts/edit.movie.page';
+import { MoviesPage } from './pages/movies/movies.page';
+import { LoginPage } from './pages/login/login.page';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'login',
+    component: LoginPage,
+  },
+  {
+    path: 'movies',
+    component: MoviesPage,
+  },
+  {
+    path: 'movies/add',
+    component: AddMoviePage,
+  },
+  {
+    path: 'movies/edit',
+    component: EditMoviePage,
+  },
+  {
+    path: 'reservations',
+    component: ReservationPage,
   },
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
