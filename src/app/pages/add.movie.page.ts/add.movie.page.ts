@@ -18,6 +18,7 @@ export class AddMoviePage {
     private navCtrl: NavController,
     private alertCtrl: AlertController
   ) {}
+
   addMovie() {
     this.apiSvc.post('api/Movies', this.movie).subscribe(
       () => {
@@ -38,5 +39,9 @@ export class AddMoviePage {
           .then((al) => al.present());
       }
     );
+  }
+
+  isChecked(event) {
+    this.movie.watched = event.target.checked;
   }
 }

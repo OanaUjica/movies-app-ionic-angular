@@ -49,4 +49,8 @@ export class EditMoviePage {
       }
     );
   }
+
+  isChecked(event) {
+    this.movie.watched = event.target.checked;
+  }
 }

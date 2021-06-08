@@ -33,6 +33,12 @@
                     </ion-select-option>
                 </ion-select>
             </ion-item>
+            <ion-checkbox 
+                slot="end" 
+                value="movie.watched"
+                (ionChange)="isChecked($event)" 
+                >
+            </ion-checkbox>
         </form>
     </div>
 </ion-content>

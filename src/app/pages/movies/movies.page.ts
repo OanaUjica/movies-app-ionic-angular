@@ -30,6 +30,15 @@ export class MoviesPage {
     this.router.navigate(['movies/edit'], navigationExtras);
   }
 
+  goToDetailsMovie(movie: Movie) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(movie),
+      },
+    };
+    this.router.navigate(['movies/details'], navigationExtras);
+  }
+
   deleteMovie(movie: Movie) {
     this.apiSvc.delete(`api/Movies/${movie.id}`).subscribe(() => {
       this.loadMovies();

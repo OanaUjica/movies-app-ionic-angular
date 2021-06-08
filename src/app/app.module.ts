@@ -1,6 +1,7 @@
 import { ReservationPage } from './pages/reservations/reservation.page';
 import { AddMoviePage } from './pages/add.movie.page.ts/add.movie.page';
 import { EditMoviePage } from './pages/edit.movie.page.ts/edit.movie.page';
+import { DetailsMoviePage } from './pages/details.movie.page.ts/details.movie.page';
 import { SideMenuComponent } from './components/side.menu/side.menu.component';
 import { MoviesPage } from './pages/movies/movies.page';
 import { LoginPage } from './pages/login/login.page';
@@ -24,6 +25,7 @@ import { TokenInterceptor } from './interceptors/auth.token.interceptor';
     // components
     AddMoviePage,
     EditMoviePage,
+    DetailsMoviePage,
     AppComponent,
     NavbarComponent,
     SideMenuComponent,
