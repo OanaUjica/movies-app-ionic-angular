@@ -2,6 +2,7 @@ import { NavigationExtras, Router } from '@angular/router';
 import { ApiService } from './../../services/api.service';
 import { Movie } from './../../models/movie.model';
 import { Component, ViewEncapsulation } from '@angular/core';
+import { AuthService } from './../../services/auth.service';
 
 @Component({
   selector: 'app-movies',
@@ -12,7 +13,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class MoviesPage {
   movies: Array<Movie>;
 
-  constructor(private apiSvc: ApiService, private router: Router) {}
+  constructor(
+    private apiSvc: ApiService,
+    private router: Router,
+    private authSvc: AuthService
+  ) {}
   ionViewWillEnter() {
     this.loadMovies();
   }
@@ -43,6 +48,11 @@ export class MoviesPage {
     this.apiSvc.delete(`api/Movies/${movie.id}`).subscribe(() => {
       this.loadMovies();
     });
+  }
+
+  isLoggedId() {
+    const token = this.authSvc.getToken();
+    return token !== null;
   }
 
   private loadMovies() {

@@ -1,7 +1,7 @@
 <ion-menu slot="start" menuId="main" contentId="content1">
     <ion-header>
         <ion-toolbar color="primary">
-            <ion-title>My app</ion-title>
+            <ion-title>CinemaArt</ion-title>
         </ion-toolbar>
     </ion-header>
     <ion-content>
@@ -10,10 +10,13 @@
                 <ion-item [routerLink]="'/movies'">My movies</ion-item>
             </ion-menu-toggle>
             <ion-menu-toggle auto-hide="true">
-                <ion-item [routerLink]="'/reservations'">My reservations</ion-item>
+                <ion-item [routerLink]="'/reservations'" *ngIf="isLoggedId()">My reservations</ion-item>
             </ion-menu-toggle>
             <ion-menu-toggle auto-hide="true">
-                <ion-item (click)="logOut()">Logout</ion-item>
+                <ion-item (click)="logOut()" *ngIf="isLoggedId()">Logout</ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle auto-hide="true">
+                <ion-item (click)="logIn()" *ngIf="isNotLoggedId()">Login</ion-item>
             </ion-menu-toggle>
         </ion-list>
     </ion-content>
