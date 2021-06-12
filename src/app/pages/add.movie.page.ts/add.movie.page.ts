@@ -20,6 +20,7 @@ export class AddMoviePage {
   ) {}
 
   addMovie() {
+    this.movie.dateAdded = new Date();
     this.apiSvc.post('api/Movies', this.movie).subscribe(
       () => {
         this.navCtrl.pop();

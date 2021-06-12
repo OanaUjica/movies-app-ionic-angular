@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ApiService {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   API_URL = 'https://localhost:44303/';
   constructor(private httpClient: HttpClient) {}
 
@@ -41,7 +42,9 @@ export class ApiService {
 
   private getHeaders() {
     const headers = {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       Accept: 'application/json',
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       'Content-Type': 'application/json',
     } as any;
 

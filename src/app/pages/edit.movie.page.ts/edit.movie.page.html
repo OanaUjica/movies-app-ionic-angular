@@ -19,6 +19,10 @@
                 <ion-input type="number" [(ngModel)]="movie.durationInMinutes" name="durationInMinutes"></ion-input>
             </ion-item>
             <ion-item>
+                <ion-label>Year of release</ion-label>
+                <ion-input type="number" [(ngModel)]="movie.yearOfRelease" name="yearOfRelease"></ion-input>
+            </ion-item>
+            <ion-item>
                 <ion-label>Rating: </ion-label>
                 <ion-input type="number" [(ngModel)]="movie.rating" name="rating"></ion-input>
             </ion-item>
@@ -33,12 +37,16 @@
                     </ion-select-option>
                 </ion-select>
             </ion-item>
-            <ion-checkbox 
-                slot="end" 
-                value="movie.watched"
-                (ionChange)="isChecked($event)" 
+            <ion-item>
+                <ion-label>Watched</ion-label>
+                <ion-checkbox 
+                    slot="end" 
+                    value="{{movie.watched}}"
+                    checked="{{movie.watched}}"
+                    (ionChange)="isChecked($event)" 
                 >
-            </ion-checkbox>
+                </ion-checkbox>
+            </ion-item>
         </form>
     </div>
 </ion-content>
