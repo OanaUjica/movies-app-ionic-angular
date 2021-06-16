@@ -10,13 +10,13 @@
                 <ion-item [routerLink]="'/movies'">My movies</ion-item>
             </ion-menu-toggle>
             <ion-menu-toggle auto-hide="true">
-                <ion-item [routerLink]="'/reservations'" *ngIf="isLoggedId()">My reservations</ion-item>
+                <ion-item [routerLink]="'/reservations'" *ngIf="isLoggedIn()">My reservations</ion-item>
             </ion-menu-toggle>
             <ion-menu-toggle auto-hide="true">
-                <ion-item (click)="logOut()" *ngIf="isLoggedId()">Logout</ion-item>
+                <ion-item (click)="logOut()" *ngIf="isLoggedIn()">Logout</ion-item>
             </ion-menu-toggle>
             <ion-menu-toggle auto-hide="true">
-                <ion-item (click)="logIn()" *ngIf="isNotLoggedId()">Login</ion-item>
+                <ion-item (click)="logIn()" *ngIf="isNotLoggedIn()">Login</ion-item>
             </ion-menu-toggle>
         </ion-list>
     </ion-content>

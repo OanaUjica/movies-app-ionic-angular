@@ -50,7 +50,7 @@ export class MoviesPage {
     });
   }
 
-  isLoggedId() {
+  isLoggedIn() {
     const token = this.authSvc.getToken();
     return token !== null;
   }

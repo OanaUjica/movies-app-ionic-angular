@@ -8,12 +8,12 @@ import { NavController } from '@ionic/angular';
 })
 export class SideMenuComponent {
   constructor(private authSvc: AuthService, private navCtrl: NavController) {}
-  isNotLoggedId() {
+  isNotLoggedIn() {
     const token = this.authSvc.getToken();
     return token === null;
   }
 
-  isLoggedId() {
+  isLoggedIn() {
     const token = this.authSvc.getToken();
     return token !== null;
   }
